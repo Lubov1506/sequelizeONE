@@ -1,12 +1,8 @@
 const {Router} = require('express');
+const UserController = require('./controllers/User.controller');
 
 const router = Router();
 
-router.get('/', (req,res,next) => {
-    res.status(200).send('oyk');
-})
+router.post('/user', UserController.createUser);
 
-router.get('/api', (req,res,next) => {
-    res.status(200).send('text');
-})
 module.exports = router;
